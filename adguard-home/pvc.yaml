@@ -1,0 +1,15 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: PersistentVolumeClaim
+  metadata:
+    name: adguard-home-pvc
+    namespace: adguard-home
+  spec:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 100Mi
+    volumeMode: Filesystem
+    volumeName: adguard-home
