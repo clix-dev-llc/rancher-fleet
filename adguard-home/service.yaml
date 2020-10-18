@@ -23,7 +23,7 @@ spec:
     port: 443
     protocol: TCP
     targetPort: 443
-   - name: setup-http
+  - name: setup-http
     port: 3000
     protocol: TCP
     targetPort: 3000
