@@ -11,7 +11,7 @@ spec:
     http:
       paths:
       - backend:
-          serviceName: adguardhome
+          serviceName: adguard-home
           servicePort: 3000
         pathType: ImplementationSpecific
   #tls:
