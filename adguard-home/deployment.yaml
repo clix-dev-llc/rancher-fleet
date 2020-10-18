@@ -4,9 +4,14 @@ metadata:
   name: adguard-home
   namespace: adguard
 spec:
+  replicas: 1
   selector:
-  strategy:
+    matchLabels:
+      app: adguard-home
   template:
+    metadata:
+      labels:
+        app: adguard-home
     spec:
       containers:
       - image: adguard/adguardhome
