@@ -1,0 +1,46 @@
+apiVersion: v1
+items:
+- apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    name: adguard-home
+    namespace: adguard
+  spec:
+    template:
+      spec:
+        containers:
+        - image: adguard/adguardhome
+          imagePullPolicy: Always
+          name: adguardhome
+          ports:
+          - containerPort: 3000
+            name: http-config
+            protocol: TCP
+          - containerPort: 80
+            name: http
+            protocol: TCP
+          - containerPort: 853
+            name: dnstls
+            protocol: TCP
+          - containerPort: 443
+            name: https
+            protocol: TCP
+          - containerPort: 53
+            name: dns
+            protocol: TCP
+          volumeMounts:
+          - mountPath: /opt/adguardhome/conf
+            name: conf
+          - mountPath: /opt/adguardhome/work
+            name: conf
+          - mountPath: /opt/adguardhome/cert
+            name: cert
+        volumes:
+        - name: conf
+          persistentVolumeClaim:
+            claimName: adguard
+        - name: cert
+          secret:
+            defaultMode: 256
+            optional: false
+            secretName: dns.hostname.com-cert
