@@ -1,8 +1,8 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: adguardhome
-  namespace: default
+  name: adguard-home
+  namespace: adguard-home
 spec:
   ports:
    - name: dns
