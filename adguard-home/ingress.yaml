@@ -15,7 +15,7 @@ spec:
           serviceName: adguardhome
           servicePort: 3000
         pathType: ImplementationSpecific
-  tls:
-  - hosts:
-    - dns.hostname.com
-    secretName: dns.hostname.com-cert
+  #tls:
+  #- hosts:
+  #  - dns.hostname.com
+  #  secretName: dns.hostname.com-cert
