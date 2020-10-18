@@ -4,6 +4,8 @@ metadata:
   name: adguard-home
   namespace: adguard
 spec:
+  selector:
+  strategy:
   template:
     spec:
       containers:
