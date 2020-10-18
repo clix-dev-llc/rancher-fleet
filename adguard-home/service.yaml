@@ -4,6 +4,8 @@ metadata:
   name: adguard-home
   namespace: adguard-home
 spec:
+  selector:
+    app: adguard-home
   ports:
    - name: dns
     port: 53
