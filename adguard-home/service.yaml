@@ -7,7 +7,7 @@ spec:
   selector:
     app: adguard-home
   ports:
-   - name: dns
+  - name: dns
     port: 53
     protocol: TCP
     targetPort: 53
